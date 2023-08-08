@@ -23,7 +23,7 @@ const postSchema=mongoose.Schema(
         
         },
         comment: {
-            types:Array,
+            type:Array,
             default:[]
 
         }

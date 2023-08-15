@@ -55,8 +55,7 @@ app.use("/posts", postRoutes);
 /* MONGOOSE SETUP */
 
 
-const PORT=process.env.PORT || 6001;
-mongoose.set('strictQuery', false);
+const PORT=3001|| 6001;
 mongoose
   .connect("mongodb+srv://afzalalikhan86:HIstorical.321@cluster0.xdctahe.mongodb.net/?retryWrites=true&w=majority", {
     

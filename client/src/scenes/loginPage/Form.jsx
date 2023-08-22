@@ -3,7 +3,7 @@ import{
     Box,
     Button,
     TextField,
-    UseMediaQuery,
+    useMediaQuery,
     Typography,
     useTheme,
 }from "@mui/material";
@@ -11,7 +11,7 @@ import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import{ Formik } from "formik";
 import * as yup from "yup";
 import {useNavigate}from "react-router-dom";
-import {useDispatch} from "reat-redux";
+import {useDispatch} from "react-redux";
 import {setLogin} from "state";
 import Dropzone from "react-dropzone"
 import FlexBetween from "components/FlexBetween";
@@ -67,7 +67,7 @@ const registerSchema=yup.object().shape({
         );
         const SavedUser= await savedUserResponse.json();
         onSubmitProps.resetForm();
-        if (savedUser){
+        if (SavedUser){
             setPageType("login");
         }
     };
@@ -78,7 +78,7 @@ const registerSchema=yup.object().shape({
             body:JSON.stringify(values)
 
         });
-        const loggedIn=await loggenInResponse.json();
+        const loggedIn=await loggedInResponse.json();
         onSubmitProps.resetFrom();
         if(loggedIn){
             dispatch(
